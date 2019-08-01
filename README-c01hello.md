@@ -20,6 +20,5 @@
                 3.test：生成测试报告
                 4.package：打包
                 5.install：打包并安装到本地仓库
-        
-        打包后在本地仓库的位置：groupId/artifactId/version/artifactId-version.packaging
+                    打包后在本地仓库的位置：groupId/artifactId/version/artifactId-version.packaging
         
