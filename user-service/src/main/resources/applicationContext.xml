@@ -6,8 +6,7 @@
        xmlns:tx="http://www.springframework.org/schema/tx"
        xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd  
-        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd  
-
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
         http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
 
     <!-- 自动扫描 -->
@@ -18,7 +17,7 @@
           class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
         <property name="url"
-                  value="jdbc:mysql://47.244.180.90:3306/db_activiti?useUnicode=true&amp;characterEncoding=UTF-8"/>
+                  value="jdbc:mysql://47.244.180.90:3306/db_maven?useUnicode=true&amp;characterEncoding=UTF-8"/>
         <property name="username" value="root"/>
         <property name="password" value="root"/>
     </bean>
@@ -27,15 +26,15 @@
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <!-- 自动扫描mappers.xml文件 -->
-        <property name="mapperLocations" value="classpath:com/java1234/mappers/*.xml"></property>
+        <property name="mapperLocations" value="classpath:com/java1234/mappers/*.xml"/>
         <!-- mybatis配置文件 -->
-        <property name="configLocation" value="classpath:mybatis-config.xml"></property>
+        <property name="configLocation" value="classpath:mybatis-config.xml"/>
     </bean>
 
     <!-- DAO接口所在包名，Spring会自动查找其下的类 -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="com.java1234.dao"/>
-        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
     </bean>
 
     <!-- (事务管理)transaction manager, use JtaTransactionManager for global tx -->
