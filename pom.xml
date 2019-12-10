@@ -10,7 +10,6 @@
         <module>user-dao</module>
         <module>user-service</module>
         <module>user-web</module>
-        <module>user-scopeTest</module>
     </modules>
     <packaging>pom</packaging>
 

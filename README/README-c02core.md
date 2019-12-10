@@ -1,23 +1,34 @@
 #mavenStudy
 1.核心
     1.仓库
-        远程仓库的地址配置到maven安装目录下lib下的一个jar包里面
+        远程仓库在：maven-model-builder-3.5.4.jar的org/apache/maven/model/pom-4.0.0.xml
+        本地仓库在：自己指定配置文件中的localRepository
     2.依赖特性
         依赖传递：
             A依赖B，B依赖C。则A项目会有B和C依赖
         依赖选择：
             最短路径原则和最先声明原则
-        依赖范围： 编译 测试 已提供 系统 导入 
-            maven下，classpath分为三种:编译 测试 运行
-            编译：默认，在编译、测试、运行都有效。
-            测试：仅在juit测试下有效。
-            已提供：编译、测试有效。不会打包进war包。先clean一下
-            系统：了解即可，使用系统依赖systemPath
-            导入：了解即可  
-        继承与聚合：
-            打包形式选择pom
-            单独项目中，modules统一管理项目的各个模块，maven命令。
-            单独项目中，子项目中parent继承父类，继承父类的pom信息。  
+        依赖范围： 
+            maven下，classPath有3种：编译、测试、运行
+            依赖范围有5种：
+                编译compile：默认，在编译、测试、运行都有效。
+                测试test：仅在jUit测试下有效，不会打进包。
+                已提供provided：编译、测试有效。不会打包进war包。先clean一下
+                系统system：了解即可，使用系统依赖systemPath
+                导入import：了解即可  
+        继承与聚合：打包形式选择pom
+            聚合：modules统一管理项目的各个模块，maven命令。
+                <modules>
+                    <module>user-dao</module>
+                    <module>user-service</module>
+                    <module>user-web</module>
+                    <module>user-scopeTest</module>
+                </modules>    
+            继承：可以继承的pom标签
+                properties: 自定义的maven属性
+                dependencies: 项目的依赖配置
+                dependencyManagement: 项目的依赖管理配置
+                repositories: 项目的仓库配置 
     3.生命周期：按照指定的顺序执行的顺序执行。
         有三个内置的生命周期：默认（default），清洁（clean）和站点（site）
         默认（default）的生命周期包括以下阶段
@@ -53,5 +64,4 @@
             预网站（pre-site）	在实际的项目现场生成之前执行所需的进程
             网站（site）	生成项目的站点文档
             后网站（post-site）	执行完成站点生成所需的进程，并准备站点部署
-            网站部署（site-deploy）	将生成的站点文档部署到指定的Web服务器
-    
+            网站部署（site-deploy）	将生成的站点文档部署到指定的Web服务器  
