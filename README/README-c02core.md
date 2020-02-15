@@ -29,7 +29,7 @@
                 dependencies: 项目的依赖配置
                 dependencyManagement: 项目的依赖管理配置
                 repositories: 项目的仓库配置 
-    3.生命周期：按照指定的顺序执行的顺序执行。
+    3.生命周期：按照指定的顺序执行到命令。
         有三个内置的生命周期：默认（default），清洁（clean）和站点（site）
         默认（default）的生命周期包括以下阶段
            验证（validate）	验证项目是正确的，所有必要的信息可用。
