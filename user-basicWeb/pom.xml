@@ -2,20 +2,17 @@
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>mavenStudy</artifactId>
+        <groupId>com.java1234</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.java1234</groupId>
-    <artifactId>mavenStudy</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <modules>
-        <module>user-dao</module>
-        <module>user-service</module>
-        <module>user-web</module>
-        <module>mavenTest</module>
-        <module>user-basicWeb</module>
-    </modules>
-    <packaging>pom</packaging>
 
-    <name>mavenStudy Maven Webapp</name>
+    <artifactId>user-basicWeb</artifactId>
+    <packaging>war</packaging>
+
+    <name>user-basicWeb Maven Webapp</name>
     <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
 
@@ -25,25 +22,17 @@
         <maven.compiler.target>1.7</maven.compiler.target>
     </properties>
 
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>junit</groupId>
-                <artifactId>junit</artifactId>
-                <version>4.12</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>net.sf.json-lib</groupId>
-                <artifactId>json-lib</artifactId>
-                <version>1.0</version>
-                <classifier>jdk15</classifier>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 
     <build>
-        <finalName>mavenStudy</finalName>
+        <finalName>user-basicWeb</finalName>
         <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
             <plugins>
                 <plugin>

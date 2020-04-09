@@ -11,11 +11,12 @@
         依赖范围： 
             maven下，classPath有3种：编译、测试、运行
             依赖范围有5种：
-                编译compile：默认，在编译、测试、运行都有效，会打进war包和war包对应的解压包。
+                编译compile：默认值，在编译、测试、运行都有效，会打进war包和war包对应的解压包。
                 测试test：仅在jUit测试下有效，不会打包进war包和war包对应的解压包。
-                已提供provided：编译、测试有效。不会打包进war包和war包对应的解压包。先clean一下
+                已提供provided：编译、测试有效。不会打包进war包和war包对应的解压包。
                 系统system：了解即可，使用系统依赖systemPath
                 导入import：了解即可  
+                runtime：表示被依赖项目无需参与项目的编译，不过后期的测试和运行周期需要其参与。例如JDBC驱动，适用运行和测试阶段
         继承与聚合：打包形式选择pom
             聚合：modules统一管理项目的各个模块，maven命令。
                 <modules>
